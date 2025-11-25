@@ -1,154 +1,80 @@
-'use client'
+'use client';
 
-import { motion } from 'framer-motion'
-import { useInView } from 'framer-motion'
-import { useRef } from 'react'
-import { Calendar, Clock, ArrowRight } from 'lucide-react'
-import Image from 'next/image'
-import { useAdmin } from '@/context/admin-context'
+import React from 'react';
+import { motion } from 'framer-motion';
+import { useAdmin } from '../../context/admin-context';
+import { Search, ArrowRight, Calendar } from 'lucide-react';
 
-const BlogPage = () => {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.3 })
-  const { posts } = useAdmin()
+export default function BlogPage() {
+  const { posts } = useAdmin();
 
-  const containerVariants = {
+  // Menggunakan 'any' untuk menghindari error TypeScript strict saat build
+  const containerVariants: any = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.1
+        staggerChildren: 0.1
       }
     }
-  }
+  };
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
+  const itemVariants: any = {
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: "easeOut" }
+      transition: {
+        duration: 0.5,
+        ease: "easeOut"
+      }
     }
-  }
-
-  const getCategoryColor = (category: string) => {
-    switch (category.toLowerCase()) {
-      case 'development':
-      case 'code':
-        return 'from-cyan-500 to-blue-500'
-      case 'creative':
-        return 'from-purple-500 to-pink-500'
-      case 'design':
-        return 'from-pink-500 to-red-500'
-      default:
-        return 'from-gray-500 to-gray-600'
-    }
-  }
+  };
 
   return (
-    <div className="min-h-screen bg-black text-white">
-      <section className="py-20 px-6 relative">
-        <div className="max-w-7xl mx-auto">
-          {/* Section Header */}
-          <motion.div
-            ref={ref}
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Latest <span className="neon-text">Blog</span>
-            </h1>
-            <div className="w-24 h-1 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full mx-auto" />
-            <p className="text-gray-400 mt-6 max-w-2xl mx-auto">
-              Thoughts, insights, and experiences from my journey in development, design, and creative media.
-            </p>
-          </motion.div>
+    <div className="min-h-screen bg-black text-white pt-32 pb-20 px-6">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-16 space-y-4">
+          <h1 className="text-4xl md:text-6xl font-bold">
+            Writing & <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF0072] to-[#3EA6FF]">Thoughts</span>
+          </h1>
+          <p className="text-zinc-400 max-w-2xl mx-auto">
+            Insights, tutorials, and stories from my journey in development, creative media, and technology.
+          </p>
+          <div className="max-w-md mx-auto mt-8 relative">
+            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+              <Search className="h-5 w-5 text-zinc-500" />
+            </div>
+            <input type="text" placeholder="Search articles..." className="block w-full pl-10 pr-3 py-3 border border-zinc-800 rounded-full leading-5 bg-zinc-900/50 text-zinc-300 placeholder-zinc-500 focus:outline-none focus:border-[#FF0072] focus:ring-1 focus:ring-[#FF0072] sm:text-sm transition-colors" />
+          </div>
+        </div>
 
-          {/* Blog Posts Grid */}
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-          >
-            {posts.map((post, index) => (
-              <motion.article
-                key={post.id}
-                variants={itemVariants}
-                whileHover={{ y: -10 }}
-                className="group cursor-pointer"
-              >
-                <div className="h-full glassmorphism rounded-2xl overflow-hidden border border-white/10 hover:border-white/20 transition-all duration-300">
-                  {/* Image */}
-                  <div className="relative h-48 overflow-hidden">
-                    <Image
-                      src={post.coverImage}
-                      alt={post.title}
-                      width={600}
-                      height={400}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  </div>
-
-                  {/* Content */}
-                  <div className="p-6 space-y-4">
-                    {/* Category Badge */}
-                    <div className="flex items-center justify-between">
-                      <span className={`inline-block px-3 py-1 bg-gradient-to-r ${getCategoryColor(post.category)} text-white text-xs font-medium rounded-full`}>
-                        {post.category}
-                      </span>
-                      <div className="flex items-center text-gray-400 text-xs space-x-3">
-                        <span className="flex items-center gap-1">
-                          <Calendar size={12} />
-                          {new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
-                        </span>
-                        <span className="flex items-center gap-1">
-                          <Clock size={12} />
-                          {post.excerpt ? '3 min read' : '5 min read'}
-                        </span>
-                      </div>
-                    </div>
-
-                    {/* Title */}
-                    <h3 className="text-xl font-semibold text-white group-hover:text-pink-400 transition-colors duration-200 line-clamp-2">
-                      {post.title}
-                    </h3>
-
-                    {/* Excerpt */}
-                    <p className="text-gray-400 text-sm leading-relaxed line-clamp-3">
-                      {post.excerpt}
-                    </p>
-
-                    {/* Read More */}
-                    <div className="flex items-center text-pink-400 text-sm font-medium group-hover:text-pink-300 transition-colors duration-200">
-                      Read More
-                      <ArrowRight size={16} className="ml-1 group-hover:translate-x-1 transition-transform" />
-                    </div>
+        <motion.div variants={containerVariants} initial="hidden" animate="visible" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {posts && posts.length > 0 ? (
+            posts.map((post) => (
+              <motion.article key={post.id} variants={itemVariants} className="group relative flex flex-col h-full bg-[#09090B] border border-white/10 rounded-2xl overflow-hidden hover:border-[#FF0072]/50 transition-colors duration-300">
+                <div className="relative aspect-video overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#09090B] to-transparent z-10 opacity-60" />
+                  <img src={post.coverImage} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onError={(e) => { e.currentTarget.src = "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&q=80"; }} />
+                  <div className="absolute top-4 left-4 z-20">
+                    <span className="px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-full bg-black/50 backdrop-blur-md border border-white/10 text-white">{post.category}</span>
                   </div>
                 </div>
+                <div className="flex-1 p-6 flex flex-col">
+                  <div className="flex items-center gap-2 text-xs text-zinc-500 mb-3">
+                    <Calendar size={14} /><span>{post.date}</span>
+                  </div>
+                  <h2 className="text-xl font-bold text-white mb-3 line-clamp-2 group-hover:text-[#3EA6FF] transition-colors">{post.title}</h2>
+                  <p className="text-zinc-400 text-sm line-clamp-3 mb-6 flex-1">{post.excerpt}</p>
+                  <a href={`/blog/${post.id}`} className="inline-flex items-center text-sm font-bold text-[#FF0072] hover:text-white transition-colors group/link cursor-pointer">Read Article <ArrowRight size={16} className="ml-2 transform group-hover/link:translate-x-1 transition-transform" /></a>
+                </div>
               </motion.article>
-            ))}
-          </motion.div>
-
-          {/* View All Button */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-            className="text-center mt-12"
-          >
-            <button className="px-8 py-3 border border-white/20 text-white font-medium rounded-full glassmorphism hover:border-white/40 hover:scale-105 transition-all duration-300">
-              View All Posts
-            </button>
-          </motion.div>
-        </div>
-      </section>
+            ))
+          ) : (
+            <div className="col-span-full text-center py-20"><p className="text-zinc-500">No posts found. Add some from the Admin Dashboard.</p></div>
+          )}
+        </motion.div>
+      </div>
     </div>
-  )
+  );
 }
-
-export default BlogPage
