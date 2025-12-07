@@ -21,24 +21,30 @@ export interface Project {
     downloadUrl: string;
     description: string;
     icon: LucideIcon;
+    image?: string;
 }
 
 export const projects: Project[] = [
     {
+
         id: "Karina_about",
         title: "Karina About",
         category: "Website",
         downloadUrl: "https://drive.google.com/file/d/1OeSNpQfhg9cSmOM83wZ0FpBRALK28Tis/view?usp=drive_link",
         description: "About page for Karina",
-        icon: Palette
+        icon: Palette, // Biarkan ini sebagai cadangan (fallback)
+        // TAMBAHKAN BARIS INI:
+        image: "https://res.cloudinary.com/duhroj2yb/image/upload/v1765076466/iconkarina_wmxwma.png",
     },
     {
-        id: "portfolio-template",
-        title: "Portfolio Template",
+        id: "Karina_About1",
+        title: "Karina About1",
         category: "Website",
-        downloadUrl: "#",
-        description: "Clean portfolio template with smooth animations",
-        icon: Globe
+        downloadUrl: "https://drive.google.com/file/d/16I5vhMs1-K_VXXaEUhWIjZYn3aCFV6PT/view?usp=drive_link",
+        description: "About page for Karina",
+        icon: Globe,
+        image: "https://res.cloudinary.com/duhroj2yb/image/upload/v1765077865/1conkarina_lootlg.png",
+
     },
     {
         id: "ecommerce-components",
@@ -46,7 +52,8 @@ export const projects: Project[] = [
         category: "React Components",
         downloadUrl: "#",
         description: "Reusable e-commerce components with dark theme",
-        icon: Code
+        icon: Code,
+        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop",
     },
     {
         id: "mobile-app-ui",
@@ -54,7 +61,8 @@ export const projects: Project[] = [
         category: "App Design",
         downloadUrl: "#",
         description: "Mobile-first UI components with touch interactions",
-        icon: Smartphone
+        icon: Smartphone,
+        image: "https://images.unsplash.com/photo-1563986768494-4dee0e399645?w=800&h=450&fit=crop",
     },
     {
         id: "admin-dashboard",
@@ -62,7 +70,8 @@ export const projects: Project[] = [
         category: "Web App",
         downloadUrl: "#",
         description: "Complete admin dashboard with charts and analytics",
-        icon: Layout
+        icon: Layout,
+        image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=450&fit=crop",
     },
     {
         id: "social-media-kit",
@@ -70,7 +79,8 @@ export const projects: Project[] = [
         category: "UI Kit",
         downloadUrl: "#",
         description: "Social media components and templates",
-        icon: Share2
+        icon: Share2,
+        image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=450&fit=crop",
     },
     {
         id: "blog-template",
@@ -78,7 +88,8 @@ export const projects: Project[] = [
         category: "Website",
         downloadUrl: "#",
         description: "Minimalist blog template with focus on readability",
-        icon: BookOpen
+        icon: BookOpen,
+        image: "https://images.unsplash.com/photo-1499750310159-525446cc0f27?w=800&h=450&fit=crop",
     },
     {
         id: "landing-page-kit",
@@ -86,7 +97,8 @@ export const projects: Project[] = [
         category: "Website",
         downloadUrl: "#",
         description: "Conversion-focused landing page templates",
-        icon: Monitor
+        icon: Monitor,
+        image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&h=450&fit=crop",
     },
     {
         id: "tailwind-utilities",
@@ -94,7 +106,8 @@ export const projects: Project[] = [
         category: "CSS Framework",
         downloadUrl: "#",
         description: "Custom utility classes for rapid development",
-        icon: Wrench
+        icon: Wrench,
+        image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=450&fit=crop",
     },
     {
         id: "figma-design-system",
@@ -102,7 +115,8 @@ export const projects: Project[] = [
         category: "Design",
         downloadUrl: "#",
         description: "Complete design system with components and guidelines",
-        icon: PenTool
+        icon: PenTool,
+        image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=450&fit=crop",
     },
     {
         id: "react-hooks-library",
@@ -110,7 +124,8 @@ export const projects: Project[] = [
         category: "React",
         downloadUrl: "#",
         description: "Custom React hooks for common functionality",
-        icon: Box
+        icon: Box,
+        image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&h=450&fit=crop",
     },
     {
         id: "video-templates",
@@ -118,6 +133,7 @@ export const projects: Project[] = [
         category: "Video",
         downloadUrl: "#",
         description: "Professional video editing templates for content creators",
-        icon: Video
+        icon: Video,
+        image: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=800&h=450&fit=crop",
     }
 ];

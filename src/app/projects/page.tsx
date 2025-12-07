@@ -102,9 +102,19 @@ const ProjectDownloads = () => {
                     {/* Header */}
                     <div className="flex items-start justify-between mb-4">
                       <div className="flex items-center gap-3">
-                        <div className={`w-12 h-12 rounded-lg flex items-center justify-center bg-gradient-to-br ${colorClass}`}>
-                          <Icon className="h-6 w-6 text-white" />
-                        </div>
+                        {project.image ? (
+                          <div className="w-12 h-12 rounded-lg overflow-hidden shrink-0 border border-white/10">
+                            <img
+                              src={project.image}
+                              alt={project.title}
+                              className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500"
+                            />
+                          </div>
+                        ) : (
+                          <div className={`w-12 h-12 rounded-lg flex items-center justify-center bg-gradient-to-br ${colorClass} shrink-0`}>
+                            <Icon className="h-6 w-6 text-white" />
+                          </div>
+                        )}
                         <div>
                           <h3 className="text-lg sm:text-xl font-bold text-white mb-1">
                             {project.title}
