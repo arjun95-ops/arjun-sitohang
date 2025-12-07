@@ -35,7 +35,11 @@ export const portfolioData = {
 
   about: {
     title: "About Me",
-    description: "I'm a passionate Senior UI/UX Developer who bridges the gap between code and creativity. With expertise in modern web technologies and a keen eye for design, I create digital experiences that are both functional and visually stunning. My work combines technical precision with artistic vision, bringing ideas to life through clean code and compelling user interfaces.",
+    description: `Saya adalah seorang UI/UX Developer yang senang memadukan kode dan kreativitas untuk menciptakan pengalaman digital yang bermakna. Saya bekerja dengan teknologi web modern dan menikmati proses merancang antarmuka yang bersih, fungsional, dan menarik secara visual.
+
+Di luar UI/UX, saya juga seorang content creator di YouTube, serta menekuni video editing dan fotografi. Melalui pembuatan konten, saya menikmati proses berbagi ide, bercerita, dan mengeksplorasi kreativitas dalam berbagai format. Saya suka mencoba hal-hal baru, terus belajar, dan mengambil tantangan kreatif untuk berkembang.
+
+Bagi saya, desain bukan hanya soal tampilan, tetapi juga tentang bagaimana sesuatu bekerja dan terasa. Dengan kode yang rapi dan desain yang matang, saya mengubah ide menjadi pengalaman pengguna yang sederhana namun berdampak.`,
     image: "https://res.cloudinary.com/duhroj2yb/image/upload/v1764987644/arjunfoto2_ptueof.png"
   },
 
