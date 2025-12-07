@@ -44,7 +44,7 @@ const FeaturedGallery = () => {
       title: "Web Experience",
       category: "Frontend Development",
       url: "https://res.cloudinary.com/duhroj2yb/image/upload/v1764991447/arjun13_yy4zah.png"
-    }
+    },
      {
       id: 5,
       title: "Web Experience",
