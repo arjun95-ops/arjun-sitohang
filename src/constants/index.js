@@ -52,8 +52,8 @@ export const PROJECTS = [
     description: "A modern analytics dashboard for e-commerce platforms with real-time data visualization, sales tracking, and inventory management features.",
     techStack: ["React", "TypeScript", "Tailwind CSS", "Chart.js", "Node.js"],
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop",
-    downloadLink: "#download-ecommerce",
-    repoLink: "https://github.com/arjun95-ops/ecommerce-dashboard"
+    downloadLink: "https://drive.google.com/file/d/1OeSNpQfhg9cSmOM83wZ0FpBRALK28Tis/view?usp=drive_link",
+    repoLink: "https://drive.google.com/file/d/1OeSNpQfhg9cSmOM83wZ0FpBRALK28Tis/view?usp=drive_link"
   },
   {
     id: "finance-app-ui",
@@ -102,91 +102,5 @@ export const PROJECTS = [
   }
 ];
 
-export const PROJECT_FILES = [
-  {
-    id: "neon-dashboard-ui",
-    title: "Neon Dashboard UI",
-    category: "UI Kit",
-    downloadUrl: "https://example.com/download/neon-dashboard-ui.zip",
-    description: "A modern glassmorphism dashboard UI kit with neon accents"
-  },
-  {
-    id: "portfolio-template",
-    title: "Portfolio Template",
-    category: "Website",
-    downloadUrl: "https://example.com/download/portfolio-template.zip",
-    description: "Clean portfolio template with smooth animations"
-  },
-  {
-    id: "ecommerce-components",
-    title: "E-Commerce Components",
-    category: "React Components",
-    downloadUrl: "https://example.com/download/ecommerce-components.zip",
-    description: "Reusable e-commerce components with dark theme"
-  },
-  {
-    id: "mobile-app-ui",
-    title: "Mobile App UI",
-    category: "App Design",
-    downloadUrl: "https://example.com/download/mobile-app-ui.zip",
-    description: "Mobile-first UI components with touch interactions"
-  },
-  {
-    id: "admin-dashboard",
-    title: "Admin Dashboard",
-    category: "Web App",
-    downloadUrl: "https://example.com/download/admin-dashboard.zip",
-    description: "Complete admin dashboard with charts and analytics"
-  },
-  {
-    id: "social-media-kit",
-    title: "Social Media Kit",
-    category: "UI Kit",
-    downloadUrl: "https://example.com/download/social-media-kit.zip",
-    description: "Social media components and templates"
-  },
-  {
-    id: "blog-template",
-    title: "Blog Template",
-    category: "Website",
-    downloadUrl: "https://example.com/download/blog-template.zip",
-    description: "Minimalist blog template with focus on readability"
-  },
-  {
-    id: "landing-page-kit",
-    title: "Landing Page Kit",
-    category: "Website",
-    downloadUrl: "https://example.com/download/landing-page-kit.zip",
-    description: "Conversion-focused landing page templates"
-  },
-  {
-    id: "tailwind-utilities",
-    title: "Tailwind Utilities",
-    category: "CSS Framework",
-    downloadUrl: "https://example.com/download/tailwind-utilities.zip",
-    description: "Custom utility classes for rapid development"
-  },
-  {
-    id: "figma-design-system",
-    title: "Figma Design System",
-    category: "Design",
-    downloadUrl: "https://example.com/download/figma-design-system.zip",
-    description: "Complete design system with components and guidelines"
-  },
-  {
-    id: "react-hooks-library",
-    title: "React Hooks Library",
-    category: "React",
-    downloadUrl: "https://example.com/download/react-hooks-library.zip",
-    description: "Custom React hooks for common functionality"
-  },
-  {
-    id: "video-templates",
-    title: "Video Templates",
-    category: "Video",
-    downloadUrl: "https://example.com/download/video-templates.zip",
-    description: "Professional video editing templates for content creators"
-  }
-];
 
 export default portfolioData;
