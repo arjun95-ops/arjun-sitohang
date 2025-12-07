@@ -73,7 +73,7 @@ const Hero = () => {
             </h2>
 
             <p className="text-gray-300 text-sm sm:text-base max-w-md mx-auto leading-relaxed">
-              Bridging the gap between code and creativity to create stunning digital experiences that inspire and engage.
+              Menjembatani kode dan kreativitas untuk menciptakan pengalaman digital yang menginspirasi — karena kekuatan sejati lahir dari kemampuan menghadapi tantangan, bukan menghindarinya.
             </p>
 
             {/* CTA Buttons */}
