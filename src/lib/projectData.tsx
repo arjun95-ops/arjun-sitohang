@@ -47,13 +47,13 @@ export const projects: Project[] = [
 
     },
     {
-        id: "ecommerce-components",
-        title: "E-Commerce Components",
-        category: "React Components",
-        downloadUrl: "#",
-        description: "Reusable e-commerce components with dark theme",
+        id: "Karina-Gestures",
+        title: "Karina Gestures",
+        category: "Website",
+        downloadUrl: "https://drive.google.com/file/d/1EtqLCZ8fGek0bxwLx7__sj_fO6gIx1PQ/view?usp=sharing",
+        description: "Karina: Gesture Control Landing Page",
         icon: Code,
-        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop",
+        image: "https://res.cloudinary.com/duhroj2yb/image/upload/v1765114862/iconka4r1na_qyaidg.png",
     },
     {
         id: "mobile-app-ui",
